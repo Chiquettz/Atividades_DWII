@@ -97,11 +97,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
         <h2>Dados recebidos pelo servidor</h2>
-        <p><strong>Nome:</strong> <?php echo htmlspecialchars($nome); ?></p>
-        <p><strong>E-mail:</strong> <?php echo htmlspecialchars($email); ?></p>
-        <p><strong>Telefone:</strong> <?php echo htmlspecialchars($telefone); ?></p>
+        <p><strong>Nome:</strong> <?php echo htmlspecialchars($campoNome); ?></p>
+        <p><strong>E-mail:</strong> <?php echo htmlspecialchars($campoEmail); ?></p>
+        <p><strong>Telefone:</strong> <?php echo htmlspecialchars($campoTelefone); ?></p>
 
-        echo "<script>console.log('Mensagem do PHP');</script>";
     <?php endif; ?>
 
 </body>
