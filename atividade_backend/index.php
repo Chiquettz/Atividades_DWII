@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>Preencha todos os campos abaixo.</p>
         </div>
 
-        <form id="campos">
+        <form method="POST" id="campos" action=" ">
             <input type="text" id="campoNome" placeholder="Digite seu Nome:" required>
             <input type="text" id="campoTelefone" placeholder="Digite seu Telefone:" required>
             <input type="email" id="campoEmail" placeholder="Digite seu E-mail:" required>
@@ -100,7 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><strong>Nome:</strong> <?php echo htmlspecialchars($nome); ?></p>
         <p><strong>E-mail:</strong> <?php echo htmlspecialchars($email); ?></p>
         <p><strong>Telefone:</strong> <?php echo htmlspecialchars($telefone); ?></p>
+
+        echo "<script>console.log('Mensagem do PHP');</script>";
     <?php endif; ?>
-    
+
 </body>
 </html>
