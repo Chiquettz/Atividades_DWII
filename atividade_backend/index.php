@@ -94,17 +94,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" id="btnCadastro">Cadastrar</button>
         </form>
 
-        <div class="resultado"></div>
+        <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
+                <div class="resultado">
+                <h2>Dados recebidos pelo servidor</h2>
+                <p><strong>Nome:</strong> <?php echo htmlspecialchars($nome); ?></p>
+                <p><strong>E-mail:</strong> <?php echo htmlspecialchars($email); ?></p>
+                <p><strong>Telefone:</strong> <?php echo htmlspecialchars($telefone); ?></p>
+            </div>
+        <?php endif; ?>
     </div> 
-
-    <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
-        <div class="resultado">
-            <h2>Dados recebidos pelo servidor</h2>
-            <p><strong>Nome:</strong> <?php echo htmlspecialchars($nome); ?></p>
-            <p><strong>E-mail:</strong> <?php echo htmlspecialchars($email); ?></p>
-            <p><strong>Telefone:</strong> <?php echo htmlspecialchars($telefone); ?></p>
-        </div>
-    <?php endif; ?>
 
 </body>
 </html>
