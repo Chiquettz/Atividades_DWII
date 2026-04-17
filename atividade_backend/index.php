@@ -85,21 +85,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <form method="POST" id="campos" action=" ">
-            <input type="text" id="campoNome" placeholder="Digite seu Nome:" required>
-            <input type="text" id="campoTelefone" placeholder="Digite seu Telefone:" required>
-            <input type="email" id="campoEmail" placeholder="Digite seu E-mail:" required>
+            <input type="text" name="nome" id="campoNome" placeholder="Digite seu Nome:" required>
+            <input type="email" name="email" id="campoEmail" placeholder="Digite seu E-mail:" required>
+            <input type="text" name="telefone" id="campoTelefone" placeholder="Digite seu Telefone:" required>
 
             <button type="submit" id="btnCadastro">Cadastrar</button>
         </form>
-
-        <div id="resultado"></div>
     </div> 
 
     <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
         <h2>Dados recebidos pelo servidor</h2>
-        <p><strong>Nome:</strong> <?php echo htmlspecialchars($campoNome); ?></p>
-        <p><strong>E-mail:</strong> <?php echo htmlspecialchars($campoEmail); ?></p>
-        <p><strong>Telefone:</strong> <?php echo htmlspecialchars($campoTelefone); ?></p>
+        <p><strong>Nome:</strong> <?php echo htmlspecialchars($nome); ?></p>
+        <p><strong>E-mail:</strong> <?php echo htmlspecialchars($email); ?></p>
+        <p><strong>Telefone:</strong> <?php echo htmlspecialchars($telefone); ?></p>
 
     <?php endif; ?>
 
