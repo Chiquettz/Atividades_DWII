@@ -84,10 +84,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>Preencha todos os campos abaixo.</p>
         </div>
 
-        <form method="POST" id="campos" action=" ">
-            <input type="text" name="nome" id="campoNome" placeholder="Digite seu Nome:" required>
-            <input type="email" name="email" id="campoEmail" placeholder="Digite seu E-mail:" required>
-            <input type="text" name="telefone" id="campoTelefone" placeholder="Digite seu Telefone:" required>
+        <form method="POST" id="campos" action="">
+            <input type="text" name="campoNome" placeholder="Digite seu Nome:" required>
+            <input type="email" name="campoEmail" placeholder="Digite seu E-mail:" required>
+            <input type="text" name="campoTelefone" placeholder="Digite seu Telefone:" required>
 
             <button type="submit" id="btnCadastro">Cadastrar</button>
         </form>
