@@ -108,8 +108,9 @@ $resultLista = pg_query($conn, $queryLista);
         color: white;
         border: none;
         padding: 10px 18px;
-        border-radius: 6px;
+        border-radius: 5px;
         cursor: pointer;
+        align-self: center;
         font-size: 15px;
     }
 
@@ -124,6 +125,7 @@ $resultLista = pg_query($conn, $queryLista);
     .mensagem.sucesso {
         background: #d1e7dd;
         color: #0f5132;
+        margin-top: 25px;
         border: 1px solid #badbcc;
     }
 
@@ -134,9 +136,6 @@ $resultLista = pg_query($conn, $queryLista);
     }
 
     h2 {
-        margin-bottom: 20px;
-        color: #1d3557;
-        border-bottom: 2px solid #457b9d;
         padding-bottom: 10px;
     }
 
