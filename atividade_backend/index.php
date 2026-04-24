@@ -60,7 +60,6 @@ $resultLista = pg_query($conn, $queryLista);
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
-
     * {
         margin: 0;
         padding: 0;
@@ -104,6 +103,16 @@ $resultLista = pg_query($conn, $queryLista);
         box-sizing: border-box;
     }
     
+    button {
+        background: #0d6efd;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
     .mensagem {
         padding: 15px;
         border-radius: 6px;
