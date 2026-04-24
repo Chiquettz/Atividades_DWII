@@ -88,6 +88,21 @@ $resultLista = pg_query($conn, $queryLista);
         box-shadow: 0px 10px 30px rgba(0,0,0,0.2); 
     }
 
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
     
     .mensagem {
         padding: 15px;
@@ -149,6 +164,22 @@ $resultLista = pg_query($conn, $queryLista);
 
 <body>
     <div class="card_container">
+        <h1>Cadastro de Usuário</h1>
+        <p>Preencha os dados abaixo.</p>
+
+        <form method="POST" action="">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" required value="<?php echo htmlspecialchars($nome); ?>">
+
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" required value="<?php echo htmlspecialchars($email); ?>">
+
+            <label for="telefone">Telefone:</label><br>
+            <input type="text" id="telefone" name="telefone" required value="<?php echo htmlspecialchars($telefone); ?>">
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    
         <?php if ($mensagem !== ""): ?>
             <div class="mensagem <?php echo $tipoMensagem; ?>">
                 <?php echo htmlspecialchars($mensagem); ?>
