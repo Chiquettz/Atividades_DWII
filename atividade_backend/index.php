@@ -88,64 +88,61 @@ $resultLista = pg_query($conn, $queryLista);
         box-shadow: 0px 10px 30px rgba(0,0,0,0.2); 
     }
 
-    #campos {
-        display: flex;
-        flex-direction: column;
-        padding-top: 20px;
-        gap: 13px;
-        width: 100%;
+    
+    .mensagem {
+        padding: 15px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: bold;
     }
 
-    input {
-        padding: 10px;
-        border: 1px solid;
-        border-radius: 4px;
+    .mensagem.sucesso {
+        background: #d1e7dd;
+        color: #0f5132;
+        border: 1px solid #badbcc;
     }
 
-    #btnCadastro {
-        padding: 10px;
-        background-color: #457b9d;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+    .mensagem.erro {
+        background: #f8d7da;
+        color: #842029;
+        border: 1px solid #f5c2c7;
     }
 
-    .sucesso {
-      background: #d1e7dd;
-      color: #0f5132;
-      border: 1px solid #badbcc;
-    }
-
-    .erro {
-      background: #f8d7da;
-      color: #842029;
-      border: 1px solid #f5c2c7;
+    h2 {
+        margin-bottom: 20px;
+        color: #1d3557;
+        border-bottom: 2px solid #457b9d;
+        padding-bottom: 10px;
     }
 
     table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background: white;
-    }
-
-    table, th, td {
-      border: 1px solid #ddd;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
     }
 
     th, td {
-      padding: 12px;
-      text-align: left;
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
     }
 
     th {
-      background: #f1f1f1;
+        background-color: #f8f9fa;
+        color: #457b9d;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+
+    tr:hover {
+        background-color: #f1f4f8;
     }
 
     .sem-registros {
-      margin-top: 15px;
-      color: #666;
+        text-align: center;
+        padding: 20px;
+        color: #666;
     }
 
 </style>
@@ -158,31 +155,31 @@ $resultLista = pg_query($conn, $queryLista);
             </div>
         <?php endif; ?>
 
-        <h2 style="margin-top: 35px;">Usuários cadastrados</h2>
+        <h2>Usuários Cadastrados</h2>
 
         <?php if ($resultLista && pg_num_rows($resultLista) > 0): ?>
         <table>
             <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Telefone</th>
-            </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                </tr>
             </thead>
             <tbody>
-            <?php while ($usuario = pg_fetch_assoc($resultLista)): ?>
-                <tr>
-                <td><?php echo htmlspecialchars($usuario["id"]); ?></td>
-                <td><?php echo htmlspecialchars($usuario["nome"]); ?></td>
-                <td><?php echo htmlspecialchars($usuario["email"]); ?></td>
-                <td><?php echo htmlspecialchars($usuario["telefone"]); ?></td>
-                </tr>
-            <?php endwhile; ?>
+                <?php while ($usuario = pg_fetch_assoc($resultLista)): ?>
+                    <tr>
+                        <td><strong>#<?php echo htmlspecialchars($usuario["id"]); ?></strong></td>
+                        <td><?php echo htmlspecialchars($usuario["nome"]); ?></td>
+                        <td><?php echo htmlspecialchars($usuario["email"]); ?></td>
+                        <td><?php echo htmlspecialchars($usuario["telefone"]); ?></td>
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
         <?php else: ?>
-        <p class="sem-registros">Nenhum usuário cadastrado.</p>
+            <p class="sem-registros">Nenhum usuário encontrado no sistema.</p>
         <?php endif; ?>
     </div>
 
